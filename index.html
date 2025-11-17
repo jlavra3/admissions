@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Guide Information System</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind for custom font (Poppins) and new color theme -->
     <script>
         tailwind.config = {
             theme: {
@@ -15,47 +13,37 @@
                         sans: ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        // Theme Colors based on #CFB991
-                        'primary-gold': '#CFB991', // Main color
-                        'primary-gold-dark': '#B8A17D', // Darker for hover/accents
-                        'text-dark': '#374151', // Dark text for contrast
+                        'primary-gold': '#CFB991', 
+                        'primary-gold-dark': '#B8A17D', 
+                        'text-dark': '#374151', 
                     }
                 }
             }
         }
     </script>
-    <!-- Custom style for Poppins font -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
     </style>
 </head>
 <body class="font-sans bg-gray-50 min-h-screen flex flex-col antialiased">
 
-    <!-- 
-        MAIN LANDING PAGE CONTENT (HERO SECTION) 
-    -->
     <main class="flex-grow flex items-center justify-center p-4">
         <div class="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden p-8 sm:p-12 text-center border border-gray-100">
             
-            <!-- Branding/Subtext -->
             <p class="text-sm font-semibold text-text-dark uppercase tracking-widest mb-3">
                 Purdue University SSO (Shibboleth)
             </p>
 
-            <!-- Headline: Updated Title -->
             <h1 class="text-5xl sm:text-7xl font-extrabold text-text-dark mb-10 leading-tight">
                 Tour Guide <span class="text-primary-gold">Information System</span>
             </h1>
 
-            <!-- Supporting Text - Removed as requested -->
             
-            <!-- CTA Button (Links to google.com as requested) -->
-            <a href="https://purdue.ca1.qualtrics.com/jfe/form/SV_2aYXmtGUZ9O36m2" target="_blank"
+            <a href="https://jlavra3.github.io/admissions/tgis_dashboard.html" target="_blank"
                     class="inline-block px-8 py-4 bg-primary-gold text-white font-bold text-lg rounded-xl shadow-lg hover:bg-primary-gold-dark transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-gold-dark/50">
                 Launch TGIS
             </a>
 
-            <!-- Testimonial/Social Proof -->
             <div class="mt-12 pt-6 border-t border-gray-200">
                 <p class="text-sm text-gray-500 font-medium">
                     Please contact Jacob if your TGIS Profile is not established.
@@ -65,7 +53,6 @@
     </main>
     
     <script>
-        // No JavaScript is needed for this simple linking landing page.
     </script>
 </body>
 </html>

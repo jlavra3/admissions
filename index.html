@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unlock Your Future Today</title>
+    <title>Tour Guide Information System</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind for custom font (Poppins, as a replacement for United Sans) -->
+    <!-- Configure Tailwind for custom font (Poppins) and new color theme -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        // Changed font to Poppins for a clean, modern, and strong sans-serif look
                         sans: ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        'primary-blue': '#1D4ED8',
-                        'primary-blue-dark': '#1E40AF',
-                        'secondary-gray': '#F3F4F6',
+                        // Theme Colors based on #CFB991
+                        'primary-gold': '#CFB991', // Main color
+                        'primary-gold-dark': '#B8A17D', // Darker for hover/accents
+                        'text-dark': '#374151', // Dark text for contrast
                     }
                 }
             }
@@ -38,181 +38,34 @@
         <div class="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden p-8 sm:p-12 text-center border border-gray-100">
             
             <!-- Branding/Subtext -->
-            <p class="text-sm font-semibold text-primary-blue-dark uppercase tracking-widest mb-3">
-                Exclusive Early Access
+            <p class="text-sm font-semibold text-text-dark uppercase tracking-widest mb-3">
+                Official Access Portal
             </p>
 
-            <!-- Headline -->
-            <h1 class="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
-                Unlock Your Future <span class="text-primary-blue">Today</span>.
+            <!-- Headline: Updated Title -->
+            <h1 class="text-5xl sm:text-7xl font-extrabold text-text-dark mb-10 leading-tight">
+                Tour Guide <span class="text-primary-gold">Information System</span>
             </h1>
 
-            <!-- Supporting Text -->
-            <p class="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                Join our waiting list to get a sneak peek at the revolutionary tools that are changing the way we work. Secure your spot now!
-            </p>
-
-            <!-- CTA Button -->
-            <button id="openModalBtn" 
-                    class="px-8 py-4 bg-primary-blue text-white font-bold text-lg rounded-xl shadow-lg hover:bg-primary-blue-dark transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-blue/50">
-                Complete the Access Form
-            </button>
+            <!-- Supporting Text - Removed as requested -->
+            
+            <!-- CTA Button (Links to google.com as requested) -->
+            <a href="https://www.google.com" target="_blank"
+                    class="inline-block px-8 py-4 bg-primary-gold text-white font-bold text-lg rounded-xl shadow-lg hover:bg-primary-gold-dark transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-gold-dark/50">
+                Launch TGIS
+            </a>
 
             <!-- Testimonial/Social Proof -->
             <div class="mt-12 pt-6 border-t border-gray-200">
                 <p class="text-sm text-gray-500 font-medium">
-                    Trusted by 5,000+ early adopters.
+                    Powering tours around the globe.
                 </p>
             </div>
         </div>
     </main>
-
-    <!-- 
-        MODAL OVERLAY (The Form) 
-    -->
-    <div id="formModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 p-4 transition-opacity duration-300" aria-modal="true" role="dialog">
-        <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
-            
-            <div class="p-6 sm:p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h2 class="text-2xl font-bold text-gray-900">Secure Your Early Access</h2>
-                    <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
-                <p class="text-sm text-gray-500 mb-6">Fill out the fields below to receive your private invite link.</p>
-
-                <form id="waitlistForm" class="space-y-4">
-                    <!-- Name Input -->
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition">
-                    </div>
-
-                    <!-- Email Input -->
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition">
-                    </div>
-
-                    <!-- Company (Optional) -->
-                    <div>
-                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company (Optional)</label>
-                        <input type="text" id="company" name="company" placeholder="Acme Corp"
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition">
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <button type="submit" 
-                            class="w-full mt-6 px-4 py-3 bg-primary-blue text-white font-semibold rounded-lg shadow-md hover:bg-primary-blue-dark transition duration-200">
-                        Join Waitlist Now
-                    </button>
-                </form>
-
-                <!-- Message Box for Success/Error -->
-                <div id="messageBox" class="mt-4 p-3 hidden rounded-lg text-center" role="alert"></div>
-                
-            </div>
-        </div>
-    </div>
-
+    
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const openModalBtn = document.getElementById('openModalBtn');
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            const formModal = document.getElementById('formModal');
-            const modalContent = document.getElementById('modalContent');
-            const waitlistForm = document.getElementById('waitlistForm');
-            const messageBox = document.getElementById('messageBox');
-
-            // --- Modal Control Functions ---
-            const openModal = () => {
-                formModal.classList.remove('hidden');
-                formModal.classList.add('flex', 'opacity-0');
-                
-                // Force a reflow for transition to work
-                requestAnimationFrame(() => {
-                    formModal.classList.remove('opacity-0');
-                    modalContent.classList.remove('scale-95', 'opacity-0');
-                    modalContent.classList.add('scale-100', 'opacity-100');
-                });
-            };
-
-            const closeModal = () => {
-                formModal.classList.add('opacity-0');
-                modalContent.classList.remove('scale-100', 'opacity-100');
-                modalContent.classList.add('scale-95', 'opacity-0');
-
-                // Wait for transition to finish before hiding completely
-                setTimeout(() => {
-                    formModal.classList.remove('flex');
-                    formModal.classList.add('hidden');
-                    // Reset form and message box when closing
-                    waitlistForm.reset();
-                    hideMessageBox();
-                }, 300);
-            };
-
-            const hideMessageBox = () => {
-                messageBox.classList.add('hidden');
-                messageBox.textContent = '';
-                messageBox.classList.remove('bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
-            };
-
-            const showMessageBox = (message, isSuccess) => {
-                hideMessageBox(); // Clear previous messages
-                messageBox.textContent = message;
-                messageBox.classList.remove('hidden');
-                if (isSuccess) {
-                    messageBox.classList.add('bg-green-100', 'text-green-800');
-                } else {
-                    messageBox.classList.add('bg-red-100', 'text-red-800');
-                }
-            };
-
-            // --- Event Listeners ---
-            openModalBtn.addEventListener('click', openModal);
-            closeModalBtn.addEventListener('click', closeModal);
-
-            // Close modal if user clicks outside the modal content
-            formModal.addEventListener('click', (e) => {
-                if (e.target === formModal) {
-                    closeModal();
-                }
-            });
-
-            // Close modal with the escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !formModal.classList.contains('hidden')) {
-                    closeModal();
-                }
-            });
-
-            // --- Form Submission Handler ---
-            waitlistForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // In a real application, you would send this data to a server here.
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const company = document.getElementById('company').value;
-
-                console.log('Form Submitted:', { name, email, company });
-
-                // Simulate a successful submission
-                showMessageBox(`Thank you, ${name}! Your early access request has been successfully submitted. Check your email soon!`, true);
-                waitlistForm.reset(); // Clear the form fields
-                
-                // Optional: Automatically close the modal after a few seconds
-                setTimeout(closeModal, 3000); 
-
-                /* // Example of simulating an error:
-                // showMessageBox("Submission failed. Please check your network connection.", false);
-                */
-            });
-        });
+        // No JavaScript is needed for this simple linking landing page.
     </script>
 </body>
 </html>

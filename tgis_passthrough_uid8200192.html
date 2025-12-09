@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGIS Dashboard</title>
+    <title>TGIS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,16 +13,17 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        // Changed to Inter, with fallbacks
+                        // Using Inter, a professional, screen-optimized font
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
                         'primary-gold': '#CFB991',
                         'primary-gold-dark': '#B8A17D',
                         'text-dark': '#374151',
-                        'status-red': '#EF4444',
+                        // Updated Status Colors
+                        'status-green': '#10B981', // Tailwind green-500 for Completed
                         'status-gray': '#9CA3AF',
-                        'status-green': '#10B981', // Added green status color
+                        'status-red': '#EF4444', // Added red status color for "Not Completed"
                     }
                 }
             }
@@ -30,22 +31,6 @@
     </script>
     
     <style>
-        /* --- BANNER STYLES ADDED HERE --- */
-        .fixed-banner-container {
-            /* Ensures the banner is sticky at the top, full width, and above other content */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2000; /* High z-index to be on top of everything */
-        }
-        
-        .body-with-banner {
-            /* Adjusts the padding of the body to prevent the fixed banner from covering content */
-            padding-top: 48px; /* Set to the approximate height of the banner */
-        }
-        /* -------------------------------- */
-
         /* Custom scrollbar style */
         .status-card-container::-webkit-scrollbar {
             width: 8px;
@@ -66,14 +51,9 @@
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50 min-h-screen flex flex-col antialiased body-with-banner">
+<body class="font-sans bg-gray-50 min-h-screen flex flex-col antialiased">
 
-        <div class="fixed-banner-container">
-        <div class="bg-blue-600 shadow-xl text-white py-3 text-center text-sm font-semibold tracking-wide">
-            Due to technical difficulties, class schedule submission and SubItUp availability will open on **December 8th at 5:00pm.**
-        </div>
-    </div>
-        <header class="p-6 text-center border-b border-gray-200 bg-white shadow-sm">
+    <header class="p-6 text-center border-b border-gray-200 bg-white shadow-sm">
         <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">
             TGIS
         </p>
@@ -111,23 +91,23 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-8 border-status-green flex flex-col">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-8 border-status-red flex flex-col">
                     <h3 class="text-xl font-bold text-text-dark mb-2">Spring 2026 Class Schedule</h3>
                     
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <div class="text-left">
-                            <p class="text-sm font-semibold text-status-green bg-status-green/10 px-3 py-1 rounded-full inline-block mb-1">
-                                Completed
+                            <p class="text-sm font-semibold text-status-red bg-status-red/10 px-3 py-1 rounded-full inline-block mb-1">
+                                Not Completed
                             </p>
                             <p class="text-xs text-gray-500 font-medium mt-1">
                                 Due: Dec 28, 2025 at 11:59pm
                             </p>
                         </div>
                         
-                        <button disabled
-                            class="ml-4 px-4 py-2 bg-gray-300 text-gray-500 font-semibold text-sm rounded-lg cursor-not-allowed">
-                            Closed
-                        </button>
+                        <a href="#"
+                            class="ml-4 px-4 py-2 bg-status-red text-white font-semibold text-sm rounded-lg shadow hover:bg-red-600 transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-300">
+                            Open Form
+                        </a>
                     </div>
                 </div>
 
@@ -146,7 +126,7 @@
                         
                         <button disabled
                             class="ml-4 px-4 py-2 bg-gray-300 text-gray-500 font-semibold text-sm rounded-lg cursor-not-allowed">
-                            Launch SubItUp
+                            Closed
                         </button>
                     </div>
                 </div>
